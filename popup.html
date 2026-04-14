@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antitracker & Antiredirect</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="popup-header">
+    <div class="header-icon">
+      <img src="icons/icon-48.png" alt="Antitracker & Antiredirect" id="header-icon">
+    </div>
+    <div class="header-text">
+      <h1 id="extension-title" style="font-size: 18px;">Antitracker & Antiredirect</h1>
+      <p class="tagline" id="extension-tagline">Trackers & redirects — blocked</p>
+    </div>
+  </header>
+
+  <!-- Toggles Section -->
+  <section class="status-section" id="status-section">
+    <!-- Redirect Blocking Toggle -->
+    <div class="toggle-row" id="redirect-toggle-row">
+      <div class="toggle-info">
+        <span class="toggle-label" id="redirect-toggle-label">🛡️ Redirect Blocker</span>
+        <span class="toggle-status" id="redirect-status-text">Inactive</span>
+      </div>
+      <label class="toggle-switch" id="redirect-toggle-switch">
+        <input type="checkbox" id="redirect-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- Ad Blocker Toggle -->
+    <div class="toggle-row" id="adblock-toggle-row">
+      <div class="toggle-info">
+        <span class="toggle-label" id="adblock-toggle-label">🚫 Tracker Blocker</span>
+        <span class="toggle-status" id="adblock-status-text">Active</span>
+      </div>
+      <label class="toggle-switch" id="adblock-toggle-switch">
+        <input type="checkbox" id="adblock-toggle" checked>
+        <span class="toggle-slider adblock-slider"></span>
+      </label>
+    </div>
+  </section>
+
+  <!-- Counter Section -->
+  <section class="counter-section" id="counter-section">
+    <div class="counter-card redirect-card" id="redirect-counter-card">
+      <div class="counter-value" id="redirect-blocked-count">0</div>
+      <div class="counter-label">Redirects blocked</div>
+    </div>
+    <div class="counter-card ads-card" id="ads-counter-card">
+      <div class="counter-value" id="ads-blocked-count">0</div>
+      <div class="counter-label">Trackers</div>
+    </div>
+    <div class="counter-card total-card" id="total-counter-card">
+      <div class="counter-value" id="total-blocked-count">0</div>
+      <div class="counter-label">Total blocked</div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="history-section" id="history-section">
+    <div class="history-header" id="history-header">
+      <h2 id="history-title">Block History</h2>
+      <select id="retention-select" class="retention-select">
+        <option value="1">1 Day</option>
+        <option value="7">1 Week</option>
+        <option value="14" selected>2 Weeks</option>
+        <option value="30">30 Days</option>
+      </select>
+    </div>
+    <div class="chart-container" id="chart-container">
+      <canvas id="history-chart" width="310" height="140"></canvas>
+    </div>
+  </section>
+
+  <!-- Footer with YuvaTech branding -->
+  <footer class="footer" id="popup-footer">
+    <div class="footer-brand" id="footer-brand">
+      <img src="icons/yuvatech_logo.png" alt="YuvaTech" class="footer-logo" id="footer-logo">
+      <div class="footer-brand-text">
+        <span class="footer-company" id="footer-company">Yuvatech Solutions USA</span>
+        <span class="footer-version" id="footer-version">Antitracker & Antiredirect v2.0</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

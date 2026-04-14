@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect Blocked — Antitracker & Antiredirect</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <div class="container" id="blocked-container">
+    <!-- Shield Animation -->
+    <div class="shield-wrapper" id="shield-animation">
+      <div class="shield-icon">
+        <svg viewBox="0 0 100 100" width="100" height="100" id="shield-svg">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <path d="M50 5 L90 25 L90 55 C90 75 70 90 50 95 C30 90 10 75 10 55 L10 25 Z"
+                fill="url(#shieldGrad)" opacity="0.9" />
+          <line x1="30" y1="35" x2="70" y2="65" stroke="#FF4757" stroke-width="6" stroke-linecap="round" />
+          <line x1="70" y1="35" x2="30" y2="65" stroke="#FF4757" stroke-width="6" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <h1 class="title" id="blocked-title">Redirect Blocked</h1>
+    <p class="subtitle" id="blocked-subtitle">Antitracker & Antiredirect prevented a cross-site redirect</p>
+
+    <!-- Blocked URL Info -->
+    <div class="info-card" id="blocked-info-card">
+      <div class="info-row" id="blocked-url-row">
+        <span class="info-label">Blocked URL:</span>
+        <span class="info-value" id="blocked-url">—</span>
+      </div>
+      <div class="info-row" id="blocked-from-row">
+        <span class="info-label">From:</span>
+        <span class="info-value" id="blocked-from">—</span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions" id="blocked-actions">
+      <button class="btn btn-primary" id="go-back-btn">
+        ← Go Back
+      </button>
+      <button class="btn btn-secondary" id="close-tab-btn">
+        Close Tab
+      </button>
+    </div>
+
+    <!-- Auto-revert countdown -->
+    <p class="countdown" id="countdown-text">
+      Returning to original page in <span id="countdown-timer">5</span>s
+    </p>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

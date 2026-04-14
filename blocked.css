@@ -1,0 +1,195 @@
+/* ============================================================
+   Redirect Shield — Blocked Page Styles
+   Matching dark theme with shield animation
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #0F0F1A;
+  --bg-secondary: #1A1A2E;
+  --bg-card: rgba(30, 30, 50, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 217, 255, 0.3);
+
+  --text-primary: #F0F0F5;
+  --text-secondary: #8B8BA3;
+  --text-muted: #5A5A72;
+
+  --accent-teal: #00D9FF;
+  --accent-purple: #7C3AED;
+  --accent-red: #FF4757;
+
+  --gradient-main: linear-gradient(135deg, #00D9FF 0%, #7C3AED 100%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.container {
+  text-align: center;
+  max-width: 480px;
+  padding: 40px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Shield Animation ───────────────────────────────────── */
+.shield-wrapper {
+  margin-bottom: 24px;
+}
+
+.shield-icon {
+  display: inline-block;
+  animation: shieldBounce 0.6s ease-out;
+}
+
+@keyframes shieldBounce {
+  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+  50% { transform: scale(1.1) rotate(3deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.shield-icon svg {
+  filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.3));
+  animation: shieldPulse 2s ease-in-out infinite;
+}
+
+@keyframes shieldPulse {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.3)); }
+  50% { filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.5)); }
+}
+
+/* ─── Text ───────────────────────────────────────────────── */
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+/* ─── Info Card ──────────────────────────────────────────── */
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.info-row {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.info-row + .info-row {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.info-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  min-width: 85px;
+}
+
+.info-value {
+  font-size: 12px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--gradient-main);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  background: rgba(255, 71, 87, 0.08);
+}
+
+/* ─── Countdown ──────────────────────────────────────────── */
+.countdown {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+#countdown-timer {
+  color: var(--accent-teal);
+  font-weight: 700;
+}
