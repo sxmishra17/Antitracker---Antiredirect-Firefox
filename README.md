@@ -59,4 +59,4 @@ Search **"Antitracker & Antiredirect"** on [addons.mozilla.org](https://addons.m
 
 ## License
 
-All Rights Reserved — free to use, modify, and distribute.
+All Rights Reserved.
