@@ -60,3 +60,7 @@ Search **"Antitracker & Antiredirect"** on [addons.mozilla.org](https://addons.m
 ## License
 
 All Rights Reserved.
+
+---
+
+Developed by **Satish Mishra**, **Yuvatech Solutions USA, LLC**
